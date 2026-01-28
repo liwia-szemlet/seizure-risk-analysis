@@ -3,9 +3,9 @@
 This repository contains a comprehensive analytical pipeline for the automated detection of seizure events using accelerometry (ACM) signals. The project is designed according to rigorous medical signal processing standards and machine learning methodologies specifically tailored for highly imbalanced clinical datasets.
 
 **View rendered Jupyter notebooks content here:**
-**01_data_exploration.ipynb:** https://nbviewer.org/github/liwia-szemlet/seizure-risk-analysis/blob/main/notebooks/01_data_exploration.ipynb
-**02_feature_eng.ipynb:** https://nbviewer.org/github/liwia-szemlet/seizure-risk-analysis/blob/main/notebooks/02_feature_eng.ipynb
-**03_model_xgboost.ipynb:** https://nbviewer.org/github/liwia-szemlet/seizure-risk-analysis/blob/main/notebooks/03_model_xgboost.ipynb
+* **01_data_exploration:** https://nbviewer.org/github/liwia-szemlet/seizure-risk-analysis/blob/main/notebooks/01_data_exploration.ipynb
+* **02_feature_eng:** https://nbviewer.org/github/liwia-szemlet/seizure-risk-analysis/blob/main/notebooks/02_feature_eng.ipynb
+* **03_model_xgboost:** https://nbviewer.org/github/liwia-szemlet/seizure-risk-analysis/blob/main/notebooks/03_model_xgboost.ipynb
 
 
 ## Signal Processing and Feature Engineering
