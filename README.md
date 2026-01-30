@@ -1,6 +1,6 @@
-# Automated Seizure Detection and Risk Analysis via Multi-axis Accelerometry
+# Accelerometry-Based Seizure Event Classification (Exploratory ML Pipeline)
 
-This repository contains a comprehensive analytical pipeline for the automated detection of seizure events using accelerometry (ACM) signals. The project is designed according to rigorous medical signal processing standards and machine learning methodologies specifically tailored for highly imbalanced clinical datasets.
+This repository presents an experimental machine learning pipeline for classifying seizure-related motion patterns using wearable accelerometry data. The project focuses on feature extraction, window-based signal segmentation, and handling extreme class imbalance in biomedical time series datasets.
 
 **View rendered Jupyter notebooks content here:**
 * **01_data_exploration:** https://nbviewer.org/github/liwia-szemlet/seizure-risk-analysis/blob/main/notebooks/01_data_exploration.ipynb
@@ -20,17 +20,23 @@ The feature extraction process is based on tri-axial motion signals, processed t
 
 The classification utilizes the Extreme Gradient Boosting (XGBoost) algorithm. Given that seizure events represent a fraction of a percent of the total recording time (a 1:216 ratio), the loss function was optimized using the `scale_pos_weight` parameter to mitigate majority class bias.
 
-* **Balanced Accuracy (76.11%)**: This metric, representing the arithmetic mean of sensitivity and specificity, confirms the model's ability to distinguish between classes despite the extreme asymmetry of the clinical data.
-* **Recall / Sensitivity (55.00%)**: The model successfully identifies over half of the clinical seizure events based solely on motion dynamics, which is a critical threshold for clinical screening tools.
-* **Specificity (98.00%)**: The high specificity rate minimizes False Positives, a vital requirement for reducing alarm fatigue in clinical monitoring environments.
+* **Balanced Accuracy (76.11%):** This metric, representing the arithmetic mean of sensitivity and specificity, confirms the model's ability to distinguish between classes despite the extreme asymmetry of the clinical data.
+* **Recall (55%):** Indicates moderate sensitivity in detecting seizure-related motion patterns within this experimental dataset.
+* **Specificity (98%):** Reflects strong performance in rejecting non-seizure motion segments, which is relevant for minimizing false alarms in experimental wearable-based classification tasks.
 
-## Clinical Context: Differential Analysis of Seizures and Tremors
+## Experimental Motion Pattern Analysis
 
-The mathematical analysis of seizure dynamics enables the objective differentiation of involuntary movement etiologies, particularly in complex clinical settings.
+This project explores whether motion-derived features extracted from wearable accelerometry signals can capture characteristic patterns associated with seizure activity in labeled datasets.
 
-* **Epilepsy**: Tonic-clonic seizures exhibit a specific evolution of frequency and amplitude, reflected in high variance values within the motion magnitude features.
-* **Delirium Tremens (DT)**: Tremors associated with alcohol withdrawal syndrome typically present with higher frequency and lower amplitude compared to epileptic seizures. Accelerometry-based modeling allows for the objective separation of these states, facilitating appropriate pharmacological intervention (e.g., benzodiazepines for DT versus antiepileptic drugs for epilepsy).
-* **Addiction Treatment Monitoring**: This system serves as a decision-support tool in detoxification units, enabling early intervention for withdrawal-related seizures that may otherwise be missed during intermittent manual observations.
+* The observed differences between seizure-related motion segments and other involuntary movement patterns are interpreted as statistical patterns within the dataset rather than clinically validated diagnostic distinctions.
+**The pipeline is intended for research and educational purposes and does not provide medical diagnosis or treatment recommendations.**
+
+## Limitations
+
+- The model was trained on a retrospective dataset and has not been prospectively validated.
+- Accelerometry-based detection cannot capture non-motor seizure types.
+- Performance metrics reflect dataset-specific characteristics and may not generalize across wearable devices or patient populations.
+- The pipeline is intended as a research prototype rather than a deployable clinical system.
 
 ## Data Citation and References
 
